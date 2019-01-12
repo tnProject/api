@@ -5,7 +5,6 @@ var Singleton = (function () {
     var instance;
 
     function createInstance() {
-     
         const sequelize = new Sequelize(configdb.database, configdb.username, configdb.password, {
             host: configdb.host,
             dialect: configdb.dialect,
@@ -17,6 +16,7 @@ var Singleton = (function () {
                 acquire: 30000,
                 idle: 10000
             },
+            logging: configdb.logging
         });
         return sequelize;
     }
@@ -30,6 +30,5 @@ var Singleton = (function () {
         }
     };
 })();
-
 
 module.exports = Singleton;
