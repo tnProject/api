@@ -8,5 +8,3 @@ module.exports = dbconnection.getInstance().define('products', {
     description: Sequelize.STRING,
     image_link: Sequelize.STRING
 });
-
-

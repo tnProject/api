@@ -31,7 +31,7 @@ describe('Products', () => {
         it('it should GET all the products', (done) => {
             chai.request(app)
                 .get('/')
-                .end((err, res) => {                    
+                .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('Object');
                     res.body.data.length.should.be.eql(2);
