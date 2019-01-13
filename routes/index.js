@@ -6,7 +6,9 @@ var router = express.Router();
 router.get('/', async (req, res, next) => {
   var limit = req.query.limit;
   var page = req.query.page;
-  var result = await Prouct.findAll({ attributes: ['name', 'price'] });
+
+  var db = req.app.get('db');
+  var result = await Prouct(db).findAll({ attributes: ['name', 'price'] });
   res.json({
     data: result
   });
