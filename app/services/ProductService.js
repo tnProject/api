@@ -5,7 +5,7 @@ class ProductService {
     }
 
     getAll(){
-        return Product.findAll({ attributes: ['name', 'price', 'description'] });
+        return Product.findAll({ attributes: ['name', 'price', 'description', 'image_link'] });
     }
 
     create(product){
